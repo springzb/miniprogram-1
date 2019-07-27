@@ -1,0 +1,8 @@
+<!--pages/index/index.wxml-->
+<view>请输入一个数字:
+  <input type="number"></input>
+</view>
+<view>请输入一个数字:
+  <input type="number"></input>
+</view>
+<button class="buttons">比较</button>
