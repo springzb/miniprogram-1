@@ -1,0 +1,11 @@
+/* pages/index/index.wxss */
+.buttons{
+  width: 95%; 
+  margin: 20rpx;
+  background: #1e82d2; 
+  color:#ffffff; 
+  padding-right:0rpx; 
+}
+.view{
+  margin: 10rpx
+}
