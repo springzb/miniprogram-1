@@ -5,4 +5,4 @@
 <view>请输入一个数字:
   <input type="number"></input>
 </view>
-<button class="buttons">比较</button>
+<button>比较</button>
