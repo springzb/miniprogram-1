@@ -1,0 +1,66 @@
+<!--pages/compare/compare.wxml-->
+
+
+
+<view>----------------------------------------------</view>
+<!-- 表单的方式提交比较 -->
+<form bindsubmit="formCompare">
+  <view>
+    <text>请输入第1个数字： </text>
+    <input type="digit" name="num3" />
+  </view>
+  <view>
+    <text>请输入第2个数字： </text>
+    <input type="digit" name="num4" />
+  </view>
+  <button form-type="submit">比较</button>
+</form>
+<view>
+  <text>比较结果： {{result}}</text>
+</view>
+
+<view>----------------------------------------------</view>
+
+<view>
+  <text>请输入一个整数:</text>
+  <input type="number" bindchange="change" data-id="num1"></input>
+</view>
+<view>
+  <text>请输入一个整数:</text>
+  <input type="number" bindchange= "change" data-id="num2"></input>
+</view>
+<view>
+  <text>比较结果：{{num1>num2 ? '第1个数大' : ( num1<num2 ? '第2个数大':'两数相等')}}</text>
+</view>
+
+<view>-------------------------------------------------</view>
+
+<view>
+  <text wx:if="{{num1>num2}}">比较结果：第1个数大</text>
+  <text wx:if="{{num1<num2}}">比较结果：第2个数大</text>
+  <text wx:if="{{num1==num2}}">比较结果：两个数相等</text>
+</view>
+
+<view>-------------------------------------------------</view>
+
+<view>
+  <text wx:if="{{num1>num2}}">比较结果：第1个数大</text>
+  <text wx:elif="{{num1<num2}}">比较结果：第2个数大</text>
+  <text wx:else="{{num1==num2}}">比较结果：两个数相等</text>
+</view>
+
+<view>-------------------------------------------------</view>
+<!-- 当需要控制某一块区域的时候，用 <block> 标签 -->
+<view>
+  <block wx:if="{{num1>num2}}">
+     <text>比较结果：第1个数大</text>
+  </block>
+  <block wx:elif="{{num1<num2}}">
+     <text>比较结果：第2个数大</text>
+  </block>
+  <block wx:else="{{num1==num2}}">
+     <text>比较结果：两个数相等</text>
+  </block>
+</view>
+
+
