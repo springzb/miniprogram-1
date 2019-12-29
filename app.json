@@ -1,7 +1,8 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/home/home"
+    "pages/home/home",
+    "pages/compare/compare"
   ],
   "window": {
     "navigationBarBackgroundColor": "#ffffff",
@@ -23,6 +24,12 @@
         "iconPath": "pages/image/index0.png",
         "selectedIconPath": "pages/image/index1.png"
       },
+       {
+        "pagePath": "pages/compare/compare",
+        "text": "比较",
+        "iconPath": "pages/image/compare0.png",
+        "selectedIconPath": "pages/image/compare1.png"
+      },
       {
         "pagePath": "pages/home/home",
         "text": "我的",
@@ -32,10 +39,10 @@
     ]
   },
   "networkTimeout": {
-    "request": 20000,
-    "connectSocket": 20000,
-    "uploadFile": 20000,
-    "downloadFile": 20000
+    "request": 30000,
+    "connectSocket": 30000,
+    "uploadFile": 30000,
+    "downloadFile": 30000
   },
   "sitemapLocation": "sitemap.json"
 }

@@ -1,8 +1,83 @@
 <!--pages/index/index.wxml-->
-<view>请输入一个数字:
-  <input type="number"></input>
+
+<!-- 
+   小程序中 用 rpx 为单位
+   <view>  视图容器
+   <icon>  图标文件
+   <text>  文本文件
+   <checkbox> 复选框
+   <button>   按钮
+   <radio>    单选框
+   <image>    图片
+   <input>    输入框
+   <form>     表单
+   <progress> 进度条
+ -->
+
+
+<view>
+  <text>请输入一个整数:</text>
+  <input type="number" bindchange="change" data-id="num3"></input>
 </view>
-<view>请输入一个数字:
-  <input type="number"></input>
+<view>
+  <text>请输入一个整数:</text>
+  <input type="number" bindchange= "change" data-id="num4"></input>
 </view>
-<button>比较</button>
+<button bindtap="compare2">比较</button>
+
+<view style="margin:30rpx">
+<!-- 在 wxml 中使用双大括号 {{}}  可以实现数据绑定
+    当页面打开时候，就会到 Page({data:{result: ''},...}) 中读取 result 的值。
+ -->
+   <text>比较结果： {{result2}}</text>
+</view>
+
+ <view>----------------------------------------------</view>
+<view>
+  <text>请输入一个整数:</text>
+  <input type="number" bindchange="num1change"></input>
+</view>
+<view>
+  <text>请输入一个整数:</text>
+  <input type="number" bindchange= "num2change"></input>
+</view>
+
+<view>
+  <text>请输入身份证:</text>
+  <input type="idcard"></input>
+</view>
+<!-- 这里设置 style 里面 上 下 左 右 边距为 20rpx-->
+<view style="margin:20rpx">
+  <text>请输入小数:</text>
+  <input type="digit"></input>
+</view>
+
+<button bindtap="compare">比较</button>
+
+<view style="margin:30rpx">
+<!-- 在 wxml 中使用双大括号 {{}}  可以实现数据绑定
+    当页面打开时候，就会到 Page({data:{result: ''},...}) 中读取 result 的值。
+ -->
+   <text>比较结果： {{result}}</text>
+</view>
+
+
+
+<!-- 
+  bindtap 绑定 tap 事件 
+
+  bind事件类型   catch事件类型
+  bindtap 它的特点是不会阻止冒泡事件向上冒泡
+  catchtap   可以阻止冒泡事件向上冒泡  
+
+  <view bindtap="outerTap">
+    outer
+    <view catchtap="middleTap">
+      middle
+      <view bindtap="innerTap">inner</view>
+    </view>
+  </view>
+  单击 inner ，会先后触发 innerTap 和 middleTap ,由于 middleTap 使用 catcht 阻止事件冒泡就不会触发 outerTap 
+  单击 middle 则只会触发 middleTap 如果单击 outer 则只会触发 outerTap
+
+-->
