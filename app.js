@@ -45,6 +45,8 @@ App({
  // 全局方法函数 
   test : function() {
     console.log('test');
-  }
+  },
+
+  url : 'http://127.0.0.1:8080'
 
 })

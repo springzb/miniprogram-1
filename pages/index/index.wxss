@@ -16,3 +16,10 @@ input{
   margin-top: 20rpx;
   border-bottom: 2rpx solid #ccc;
 }
+.container{margin:50rpx}
+label{
+  display:block;margin:8rpx
+}
+textarea{
+  height:200rpx;margin-top:10rpx;border:2rpx solid #eee
+}

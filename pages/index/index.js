@@ -6,7 +6,8 @@ Page({
    */
   data: {
     result : '',
-    result2 : ''
+    result2 : '',
+    url : ''
   },
 
   /**
@@ -27,6 +28,8 @@ Page({
     console.log(app.num);
     // 调用全局方法
     app.test();
+
+    this.data.url = app.url;
     
     console.log("index onReady 监听页面初次渲染完成");
   },
@@ -136,5 +139,29 @@ Page({
     // 需要通过 this.setData() 方法来实现，该方法的参数是一个对象，传入{result : str} 就是将页面中 {{result}} 的值改变变量 str 的值
     this.setData({result2 : str})
   },
+
+  submit : function(e){
+    console.log('表单被提交了');
+    console.log(e);
+    wx.request({
+      url: this.data.url+'/api/v1/min/form',
+      complete: (res) => {},
+      data: e.detail.value,
+      dataType: 'json',
+      fail: (res) => {
+        console.log('调用失败了IC');
+        console.log(res);
+        console.log('调用失败了')
+      },
+      header: 'application/json',
+      method: 'post',
+      responseType: 'text',
+      success: (result) => {
+        console.log('成功了')
+        console.log(result)
+      },
+    })
+    
+  }
 
 })
